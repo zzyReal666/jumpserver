@@ -5235,8 +5235,8 @@ msgid "Your account has been created successfully"
 msgstr "你的帳號已創建成功"
 
 #: jumpserver/context_processor.py:14
-msgid "JumpServer - An open-source PAM"
-msgstr "JumpServer 開源堡壘機"
+msgid "PAM"
+msgstr "特权账号管理运维堡垒机"
 
 #: jumpserver/views/celery_flower.py:22
 msgid "<h1>Flower service unavailable, check it</h1>"
