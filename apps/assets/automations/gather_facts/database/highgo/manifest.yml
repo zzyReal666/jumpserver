@@ -1,0 +1,11 @@
+id: gather_facts_highgo
+name: "{{ 'Gather facts from HighGo' | trans }}"
+category: database
+type:
+  - highgo
+method: gather_facts
+i18n:
+  Gather facts from HighGo:
+    zh: 使用 Ansible 模块 postgresql 从 HighGo server 获取信息
+    en: Gather facts from HighGo server using postgresql module
+    ja: postgresqlモジュールを使用して HighGo serverから情報を収集する

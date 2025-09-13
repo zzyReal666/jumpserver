@@ -1,0 +1,11 @@
+id: highgo_ping
+name: "{{ 'Ping HighGo' | trans }}"
+category: database
+type:
+  - highgo
+method: ping
+i18n:
+  Ping HighGo:
+    zh: 使用 Ansible 模块 postgresql 来测试 HighGo 可连接性
+    en: Use ansible postgresql module to test HighGo
+    ja: Ansible postgresqlモジュールを使用してテストする HighGo

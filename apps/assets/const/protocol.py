@@ -27,6 +27,7 @@ class Protocol(ChoicesMixin, models.TextChoices):
     clickhouse = 'clickhouse', 'ClickHouse'
     redis = 'redis', 'Redis'
     mongodb = 'mongodb', 'MongoDB'
+    highgo = 'highgo', 'HighGo'
 
     k8s = 'k8s', 'K8s'
     http = 'http', 'HTTP(s)'
@@ -249,6 +250,20 @@ class Protocol(ChoicesMixin, models.TextChoices):
                         'type': 'bool',
                         'default': False,
                         'label': _('Auth username')
+                    },
+                }
+            },
+            cls.highgo: {
+                'port': 5866,
+                'required': True,
+                'secret_types': ['password'],
+                'xpack': True,
+                'setting': {
+                    'use_ssl': {
+                        'type': 'bool',
+                        'default': False,
+                        'label': _('Use SSL'),
+                        'help_text': _('Whether to use SSL connection')
                     },
                 }
             },
