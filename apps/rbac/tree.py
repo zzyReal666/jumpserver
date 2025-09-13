@@ -65,7 +65,7 @@ extra_nodes_data = [
     {'id': "security", "name": _("Security"), "pId": "view_setting"},
     {'id': "appearance", "name": _("Appearance"), "pId": "view_setting"},
     {'id': "tasks", "name": _("Task"), "pId": "view_setting"},
-    {'id': "license", "name": _("License"), "pId": "view_setting"},
+    # {'id': "license", "name": _("License"), "pId": "view_setting"},
     {'id': "other", "name": _("Other"), "pId": "view_setting"},
     {'id': "job_audit", "name": _("Job audit"), "pId": "view_audit"},
 ]
@@ -161,7 +161,7 @@ special_setting_pid_mapper = {
     'ops.view_celerytaskexecution': 'tasks',
     'ops.view_taskmonitor': 'tasks',
     "settings.change_clean": "tasks",
-    "settings.change_license": "license",
+    # "settings.change_license": "license",
     'orgs.organization': 'view_setting',
     "settings.view_setting": "view_setting",
     "settings.change_other": "other",
