@@ -49,3 +49,5 @@ apps.iml
 *.db
 *.mmdb
 *.ipdb
+apps/static/img.bak/
+uv.lock
