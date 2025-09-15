@@ -18,13 +18,16 @@ if not XPACK_DISABLED:
 XPACK_TEMPLATES_DIR = []
 XPACK_CONTEXT_PROCESSOR = []
 XPACK_LICENSE_IS_VALID = True   # Xpack 许可证有效
-XPACK_LICENSE_EDITION = ""
+XPACK_LICENSE_EDITION = "professional"  # 设置为专业版
 XPACK_LICENSE_EDITION_ULTIMATE = False
 XPACK_LICENSE_INFO = {
     'corporation': corporation,
+    'edition': 'professional',
+    'count': 1000,
+    'valid': True,
 }
 
-XPACK_LICENSE_CONTENT = 'community'
+XPACK_LICENSE_CONTENT = 'professional'
 
 if XPACK_ENABLED:
     from xpack.utils import get_xpack_templates_dir, get_xpack_context_processor

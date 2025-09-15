@@ -161,7 +161,7 @@ special_setting_pid_mapper = {
     'ops.view_celerytaskexecution': 'tasks',
     'ops.view_taskmonitor': 'tasks',
     "settings.change_clean": "tasks",
-    # "settings.change_license": "license",
+    "settings.change_license": "license",   # 许可证权限
     'orgs.organization': 'view_setting',
     "settings.view_setting": "view_setting",
     "settings.change_other": "other",

@@ -1,4 +1,4 @@
-FROM jumpserver/core-base:20250819_064003 AS stage-build
+FROM jumpserver/core-base:x86 AS stage-build
 
 ARG VERSION
 
@@ -19,7 +19,7 @@ RUN set -ex \
     && python manage.py compilemessages
 
 
-FROM python:3.11-slim-bullseye
+FROM python:3.11-slim-bookworm
 ENV LANG=en_US.UTF-8 \
     PATH=/opt/py3/bin:$PATH
 
@@ -38,7 +38,7 @@ ARG TOOLS="                           \
 ARG APT_MIRROR=http://deb.debian.org
 
 RUN set -ex \
-    && sed -i "s@http://.*.debian.org@${APT_MIRROR}@g" /etc/apt/sources.list \
+    && sed -i "s@http://.*.debian.org@${APT_MIRROR}@g" /etc/apt/sources.list.d/debian.sources \ 
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && apt-get update > /dev/null \
     && apt-get -y install --no-install-recommends ${DEPENDENCIES} \
