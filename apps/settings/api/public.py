@@ -24,7 +24,8 @@ class OpenPublicSettingApi(generics.RetrieveAPIView):
 
     def get_object(self):
         return {
-            "XPACK_ENABLED": settings.XPACK_ENABLED,
+            # "XPACK_ENABLED": settings.XPACK_ENABLED,
+            "XPACK_ENABLED": True,  # 修改：固定返回 True
             "INTERFACE": self.interface_setting,
             "LANGUAGES":  [
                 {
@@ -44,8 +45,15 @@ class PublicSettingApi(OpenPublicSettingApi):
     def get_object(self):
         values = super().get_object()
         values.update({
-            "XPACK_LICENSE_IS_VALID": settings.XPACK_LICENSE_IS_VALID,
-            "XPACK_LICENSE_INFO": settings.XPACK_LICENSE_INFO,
+            # "XPACK_LICENSE_IS_VALID": settings.XPACK_LICENSE_IS_VALID,
+            # "XPACK_LICENSE_INFO": settings.XPACK_LICENSE_INFO,
+            "XPACK_LICENSE_IS_VALID": True,
+            "XPACK_LICENSE_INFO": {
+                'corporation': 'JumpServer Community',
+                'edition': 'professional',
+                'count': 1000,
+                'valid': True,
+            },
             "PASSWORD_RULE": {
                 'SECURITY_PASSWORD_MIN_LENGTH': settings.SECURITY_PASSWORD_MIN_LENGTH,
                 'SECURITY_ADMIN_USER_PASSWORD_MIN_LENGTH': settings.SECURITY_ADMIN_USER_PASSWORD_MIN_LENGTH,
