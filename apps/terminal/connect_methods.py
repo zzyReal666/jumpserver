@@ -9,6 +9,8 @@ from django.utils.translation import gettext_lazy as _
 
 from assets.const import Protocol
 from .const import TerminalType
+import logging
+logger = logging.getLogger(__name__)
 
 
 class WebMethod(TextChoices):
@@ -307,27 +309,28 @@ class ConnectMethodUtil:
                     for method in web_methods
                 ])
 
-                # 客户端方式
-                if component_protocol['match'] == 'map':
-                    listen = [asset_protocol]
-                else:
-                    listen = component_protocol['listen']
 
-                for listen_protocol in listen:
-                    limits = client_limits.get(listen_protocol, [])
-                    if limits and asset_protocol not in limits:
-                        continue
-                    # Native method
-                    client_methods = native_methods.get(listen_protocol, [])
-                    methods[str(asset_protocol)].extend([
-                        {
-                            'component': component.value,
-                            'type': 'native',
-                            'endpoint_protocol': listen_protocol,
-                            **method
-                        }
-                        for method in client_methods
-                    ])
+                # # 客户端方式
+                # if component_protocol['match'] == 'map':
+                #     listen = [asset_protocol]
+                # else:
+                #     listen = component_protocol['listen']
+
+                # for listen_protocol in listen:
+                #     limits = client_limits.get(listen_protocol, [])
+                #     if limits and asset_protocol not in limits:
+                #         continue
+                #     # Native method
+                #     client_methods = native_methods.get(listen_protocol, [])
+                #     methods[str(asset_protocol)].extend([
+                #         {
+                #             'component': component.value,
+                #             'type': 'native',
+                #             'endpoint_protocol': listen_protocol,
+                #             **method
+                #         }
+                #         for method in client_methods
+                #     ])
 
         # 远程应用方式，这个只有 tinker 提供，并且协议可能是自定义的
         for asset_protocol, applet_methods in applet_methods.items():

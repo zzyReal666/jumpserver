@@ -1,0 +1,51 @@
+{
+    "all": {
+        "hosts": {
+            "192.168.6.248": {
+                "ansible_connection": "ssh",
+                "ansible_host": "192.168.6.248",
+                "ansible_port": 22,
+                "ansible_shell_type": "cmd",
+                "ansible_user": "Administrator",
+                "jms_account": {
+                    "id": "32864098-91ac-4f78-8122-e025f433b92f",
+                    "private_key_path": null,
+                    "secret": "",
+                    "secret_type": "password",
+                    "username": "Administrator"
+                },
+                "jms_asset": {
+                    "address": "192.168.6.248",
+                    "category": "host",
+                    "id": "bb0816cf-57c1-4683-a538-dd2561d96c3e",
+                    "name": "192.168.6.248",
+                    "origin_address": "192.168.6.248",
+                    "port": 22,
+                    "protocol": "ssh",
+                    "protocols": [
+                        {
+                            "name": "ssh",
+                            "port": 22
+                        },
+                        {
+                            "name": "rdp",
+                            "port": 3389
+                        }
+                    ],
+                    "rdp_port": 3389,
+                    "secret_info": {},
+                    "spec_info": {},
+                    "ssh_port": 22,
+                    "type": "windows"
+                },
+                "local_python_interpreter": "/Users/zhangzhongyuan/IdeaProjects/jumpserver/.venv/bin/python",
+                "old_ssh_version": false,
+                "params": {}
+            },
+            "localhost": {
+                "ansible_connection": "local",
+                "ansible_host": "127.0.0.1"
+            }
+        }
+    }
+}

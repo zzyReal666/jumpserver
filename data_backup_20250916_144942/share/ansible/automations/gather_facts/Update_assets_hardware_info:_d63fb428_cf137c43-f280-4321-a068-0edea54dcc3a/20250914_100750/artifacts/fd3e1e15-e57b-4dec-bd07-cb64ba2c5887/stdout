@@ -1,0 +1,8 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+[1;31mfatal: [192.168.6.248]: UNREACHABLE! => {"changed": false, "msg": "Data could not be sent to remote host \"192.168.6.248\". Make sure this host can be reached over ssh: Administrator@192.168.6.248: Permission denied (publickey,password,keyboard-interactive).\r\n", "unreachable": true}[0m
+
+PLAY RECAP *********************************************************************
+[0;31m192.168.6.248[0m              : ok=0    changed=0    [1;31munreachable=1   [0m failed=0    skipped=0    rescued=0    ignored=0   
