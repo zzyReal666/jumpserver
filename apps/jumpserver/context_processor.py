@@ -13,8 +13,13 @@ default_interface = dict((
     ('favicon', static('img/facio.ico')),
     ('logo_text', static('img/logo_text.png')),
     ('login_title', _('PAM 特权账号管理运维堡垒机')),
-    ('theme', 'classic_green'),
-    ('theme_info', {}),
+    # ('theme', 'skin-2'),
+    # ('theme', 'md-skin'), 
+       ('theme_info', {
+        'colors': {
+            '--color-primary': '#2A63F3',  # 自定义主色调
+        }
+    }),
     ('footer_content', ''),
 ))
 
