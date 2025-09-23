@@ -296,6 +296,7 @@
     "ChangeField": "变更字段",
     "ChangeOrganization": "更改组织",
     "ChangePassword": "更新密码",
+    "UsbKeyAuth": "USB Key 认证",
     "ChangePasswordOverview": "改密概览",
     "ChangeSecret": "账号改密",
     "ChangeSecretAccountHelpText": "对于同一资产中的账号，如果存在切换自关系，则不应放在同一个任务中执行密码更改，而是应分成两个任务分别执行。",
