@@ -51,3 +51,4 @@ apps.iml
 *.ipdb
 apps/static/img.bak/
 uv.lock
+lina-za/
