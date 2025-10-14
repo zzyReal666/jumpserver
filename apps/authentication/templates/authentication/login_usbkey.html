@@ -139,7 +139,7 @@
             }
 
             console.warn('[USBKey] zaykPlugin not found, trying to load /static/js/ukeyfunc.js again...');
-            try { await loadScriptOnce('{% static 'js/ukeyfunc.js' %}'); } catch (e) { console.warn('[USBKey] load static ukeyfunc.js failed', e); }
+            try { await loadScriptOnce('{% static "js/ukeyfunc.js" %}'); } catch (e) { console.warn('[USBKey] load static ukeyfunc.js failed', e); }
             await new Promise(r => setTimeout(r, 100));
             if (typeof zaykPlugin === 'function') {
                 ukeyPlugin = new zaykPlugin();

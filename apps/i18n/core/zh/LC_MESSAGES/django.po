@@ -11220,3 +11220,70 @@ msgstr "重置密码成功，返回到登录页面"
 
 #~ msgid "EXCHANGE"
 #~ msgstr "EXCHANGE"
+
+# USB Key Authentication translations
+msgid "USB Key Authentication"
+msgstr "USB Key 认证"
+
+msgid "USB Key Multi-Factor Authentication"
+msgstr "USB Key 多因素认证"
+
+msgid "Please insert your USB Key and enter the PIN below!"
+msgstr "请插入您的 USB Key 并在下方输入 PIN 码！"
+
+msgid "USB Key PIN"
+msgstr "USB Key PIN码"
+
+msgid "Enter USB Key PIN"
+msgstr "请输入 USB Key PIN码"
+
+msgid "Back to Login"
+msgstr "返回登录"
+
+msgid "Debug Mode (Show Network Details)"
+msgstr "调试模式（显示网络详情）"
+
+msgid "USB Key plugin loaded successfully"
+msgstr "USB Key 插件加载成功"
+
+msgid "USB Key plugin not available"
+msgstr "USB Key 插件不可用"
+
+msgid "USB Key plugin not available. Please refresh the page and try again."
+msgstr "USB Key 插件不可用。请刷新页面并重试。"
+
+msgid "Please enter USB Key PIN"
+msgstr "请输入 USB Key PIN码"
+
+msgid "Please insert USB Key and try again"
+msgstr "请插入 USB Key 并重试"
+
+msgid "Please remove extra USB Keys and try again"
+msgstr "请拔出多余的 USB Key 并重试"
+
+msgid "Failed to get USB Key handle"
+msgstr "获取 USB Key 句柄失败"
+
+msgid "Invalid USB Key PIN"
+msgstr "USB Key PIN码无效"
+
+msgid "Failed to get certificate serial number. Error code: "
+msgstr "获取证书序列号失败！错误码："
+
+msgid "Failed to sign data"
+msgstr "数据签名失败"
+
+msgid "USB Key authentication successful, submitting..."
+msgstr "USB Key 认证成功，正在提交..."
+
+msgid "USB Key authentication failed"
+msgstr "USB Key 认证失败"
+
+msgid "USB Key authentication failed. Please check your USB Key and PIN."
+msgstr "USB Key 认证失败。请检查您的 USB Key 和 PIN 码。"
+
+msgid "USB Key authentication error. Please try again."
+msgstr "USB Key 认证错误。请重试。"
+
+msgid "Missing signature or random data"
+msgstr "缺少签名或随机数据"

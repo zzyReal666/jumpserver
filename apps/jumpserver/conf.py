@@ -635,7 +635,7 @@ class Config(dict):
         'PERM_EXPIRED_CHECK_PERIODIC': 60 * 60,
         'PERM_TREE_REGEN_INTERVAL': 1,
         'FLOWER_URL': "127.0.0.1:5555",
-        'LANGUAGE_CODE': 'en',
+        'LANGUAGE_CODE': 'zh-hans',
         'TIME_ZONE': 'Asia/Shanghai',
         'FORCE_SCRIPT_NAME': '',
         'SESSION_COOKIE_SECURE': False,
