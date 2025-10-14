@@ -51,7 +51,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
 
@@ -69,7 +69,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
 
     };
@@ -108,7 +108,7 @@ function zaykPlugin() {
             // return SUCCESS;
             return ret.params;
         } else {
-            return ret;
+            return ret.errcode;
         }
 
         return COMMON_ERROR;
@@ -295,7 +295,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return this.SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
 
@@ -333,7 +333,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
 
@@ -349,7 +349,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
 
@@ -562,7 +562,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
 
@@ -578,7 +578,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
     // 导入RSA签名或加密证书
@@ -598,7 +598,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
 
@@ -618,7 +618,7 @@ function zaykPlugin() {
         if (ret.errcode == 0) {
             return SUCCESS;
         } else {
-            return ret;
+            return ret.errcode;
         }
     };
 }
