@@ -16,6 +16,7 @@ urlpatterns = [
     path('login/wait-confirm/', views.UserLoginWaitConfirmView.as_view(), name='login-wait-confirm'),
     path('login/mfa/face/capture/', views.UserLoginMFAFaceView.as_view(), name='login-face-capture'),
     path('login/guard/', views.UserLoginGuardView.as_view(), name='login-guard'),
+    path('login/usb-key/', views.usb_key_login_view, name='login-usb-key'),
     path('logout/', views.UserLogoutView.as_view(), name='logout'),
 
     # 原来在users中的

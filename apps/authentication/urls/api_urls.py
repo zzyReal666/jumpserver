@@ -44,6 +44,10 @@ urlpatterns = [
     path('password/verify/', api.UserPasswordVerifyApi.as_view(), name='user-password-verify'),
     path('login-confirm-ticket/status/', api.TicketStatusApi.as_view(), name='login-confirm-ticket-status'),
     path('user-session/', api.UserSessionApi.as_view(), name='user-session'),
+    
+    # USB Key authentication
+    path('usb-key/authenticate/', api.usb_key.usb_key_authenticate, name='usb-key-authenticate'),
+    path('usb-key/status/', api.usb_key.usb_key_status, name='usb-key-status'),
 ]
 
 urlpatterns += router.urls + passkey_urlpatterns

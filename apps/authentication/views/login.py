@@ -24,11 +24,13 @@ from django.views.generic.base import TemplateView, RedirectView
 from django.views.generic.edit import FormView
 
 from common.const import Language
-from common.utils import FlashMessageUtil, safe_next_url
+from common.utils import FlashMessageUtil, safe_next_url, get_logger
 from users.utils import (
     redirect_user_first_login_or_index
 )
 from .. import mixins, errors
+
+logger = get_logger(__file__)
 from ..const import RSA_PRIVATE_KEY, RSA_PUBLIC_KEY
 from ..forms import get_user_login_form_cls
 from ..utils import get_auth_methods
@@ -236,6 +238,29 @@ class UserLoginView(mixins.AuthMixin, UserLoginContextMixin, FormView):
                 error = _('User email already exists ({})').format(email)
             form.add_error(None, error)
             return super().form_invalid(form)
+        
+        # 检查用户是否启用了USB Key认证
+        try:
+            user = self.get_user_from_session()
+            if user and user.usb_key_enabled and user.usb_key_public_key:
+                # 用户启用了USB Key认证，跳转到USB Key登录页面
+                next_url = self.request.GET.get('next', '/')
+                usb_key_url = reverse('authentication:login-usb-key')
+                # 从表单获取用户名，作为USB Key二次认证的用户标识
+                username = form.cleaned_data.get('username', '')
+                if username:
+                    # 使用URL参数传递用户名，确保安全
+                    from urllib.parse import quote
+                    encoded_username = quote(username)
+                    return redirect(f"{usb_key_url}?next={next_url}&username={encoded_username}")
+                else:
+                    # 如果无法获取用户名，记录错误并继续正常流程
+                    logger.warning("USB Key redirect failed: unable to get username from form")
+        except Exception as e:
+            # 如果获取用户失败，继续正常流程
+            logger.warning(f"USB Key redirect check failed: {e}")
+            pass
+            
         self.clear_rsa_key()
         return self.redirect_to_guard_view()
 

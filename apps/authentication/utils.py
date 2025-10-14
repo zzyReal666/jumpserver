@@ -145,5 +145,11 @@ def get_auth_methods():
             'enabled': settings.AUTH_PASSKEY,
             'url': reverse('api-auth:passkey-login'),
             'logo': static('img/login_passkey.png')
+        },
+        {
+            'name': _("USB Key"),
+            'enabled': False,  # 不在登录页面显示，只通过普通登录跳转使用
+            'url': reverse('authentication:login-usb-key'),
+            'logo': static('img/login_usb_key.png')
         }
     ]

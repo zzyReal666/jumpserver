@@ -16,3 +16,4 @@ from .sso import *
 from .temp_token import *
 from .token import *
 from .face import *
+from .usb_key import *
