@@ -182,6 +182,7 @@ class UserSerializer(
                     "email", "wechat", "phone", "mfa_level",
                     "source", *fields_xpack,
                     "created_by", "updated_by", "comment",  # 通用字段
+                    "usb_key_serial_number", "usb_key_certificate_cn", "usb_key_public_key",
                 ]
         )
         fields_date = [
@@ -193,6 +194,7 @@ class UserSerializer(
             "is_valid", "is_expired", "is_active",  # 布尔字段
             "is_otp_secret_key_bound", "can_public_key_auth",
             "mfa_enabled", "need_update_password", "is_face_code_set",
+            "usb_key_enabled",
         ]
         # 包含不太常用的字段，可以没有
         fields_verbose = (

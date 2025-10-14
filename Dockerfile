@@ -1,4 +1,4 @@
-FROM jumpserver/core-base:x86 AS stage-build
+FROM jumpserver/core-base:from-4.10.7 AS stage-build
 
 ARG VERSION
 

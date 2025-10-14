@@ -148,6 +148,25 @@ class User(
     date_api_key_last_used = models.DateTimeField(
         null=True, blank=True, verbose_name=_("Date api key used")
     )
+    # USB Key 认证相关字段
+    usb_key_public_key = fields.EncryptTextField(
+        blank=True, null=True, 
+        help_text='USB Key公钥，用于USB Key OTP认证', 
+        verbose_name=_("USB Key Public Key")
+    )
+    usb_key_certificate_cn = models.CharField(
+        blank=True, null=True, max_length=256,
+        help_text='USB Key证书CN项',
+        verbose_name=_("USB Key Certificate CN")
+    )
+    usb_key_serial_number = models.CharField(
+        blank=True, null=True, max_length=128,
+        help_text='USB Key序列号',
+        verbose_name=_("USB Key Serial Number")
+    )
+    usb_key_enabled = models.BooleanField(
+        default=False, verbose_name=_("USB Key Enabled")
+    )
     date_updated = models.DateTimeField(auto_now=True, verbose_name=_("Date updated"))
     objects = UserManager()
     DATE_EXPIRED_WARNING_DAYS = 5
