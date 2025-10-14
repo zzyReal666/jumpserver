@@ -7,6 +7,9 @@ SECRET_KEY: Kj8mN2pQ9rS4tU7vW1xY3zA5bC6dE8fG0hI2jK4lM6nO8pQ0rS2tU4vW6xY8zA0bC2dE
 # 预共享Token coco和guacamole用来注册服务账号，不在使用原来的注册接受机制
 BOOTSTRAP_TOKEN: pfTwIXJT6Cu-dCya1VEw8NC0Ui8_IHJS
 
+# 服务账号注册开关：auto(启动后5分钟内), true(永久开启), false(关闭)
+SECURITY_SERVICE_ACCOUNT_REGISTRATION: true
+
 # Development env open this, when error occur display the full process track, Production disable it
 # DEBUG 模式 开启DEBUG后遇到错误时可以看到更多日志
 DEBUG: true
