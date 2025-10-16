@@ -130,7 +130,7 @@ class UserLoginContextMixin:
 
 
 @method_decorator(sensitive_post_parameters(), name='dispatch')
-@method_decorator(csrf_protect, name='dispatch')
+# @method_decorator(csrf_protect, name='dispatch')  # 已禁用CSRF保护
 @method_decorator(never_cache, name='dispatch')
 class UserLoginView(mixins.AuthMixin, UserLoginContextMixin, FormView):
     redirect_field_name = 'next'

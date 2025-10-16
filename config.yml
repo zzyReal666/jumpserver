@@ -14,6 +14,9 @@ SECURITY_SERVICE_ACCOUNT_REGISTRATION: true
 # DEBUG 模式 开启DEBUG后遇到错误时可以看到更多日志
 DEBUG: true
 
+# 禁用域名限制和CSRF检查
+REFERER_CHECK_ENABLED: false
+
 # DEBUG, INFO, WARNING, ERROR, CRITICAL can set. See https://docs.djangoproject.com/en/1.10/topics/logging/
 # 日志级别
 LOG_LEVEL: DEBUG
@@ -59,7 +62,7 @@ REDIS_PORT: 16379
 # REDIS_DB_CELERY: 3
 # REDIS_DB_CACHE: 4
 
-DOMAINS: "192.168.6.224:9528,docker build --platform linux/amd64 -t   jumpserver/core:from-4.10.7 .192.168.111.138:9528"
+# DOMAINS: "192.168.6.224:9528,192.168.111.138:9528"
 
 # 关闭远程应用的客户端RDP方式 只支持web方式
 TERMINAL_RAZOR_ENABLED: false
