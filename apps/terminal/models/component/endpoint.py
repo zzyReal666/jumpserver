@@ -25,6 +25,7 @@ class Endpoint(JMSBaseModel):
     oracle_port = PortField(default=15210, verbose_name=_('Oracle port'))
     mongodb_port = PortField(default=27018, verbose_name=_('MongoDB port'))
     highgo_port = PortField(default=58660, verbose_name=_('HighGo port'))
+    kingbase_port = PortField(default=54322, verbose_name=_('Kingbase port'))
     vnc_port = PortField(default=15900, verbose_name=_('VNC port'))
 
     comment = models.TextField(default='', blank=True, verbose_name=_('Comment'))
@@ -70,6 +71,7 @@ class Endpoint(JMSBaseModel):
             'https_port': 0,
             'http_port': 0,
             'highgo_port': 0,
+            'kingbase_port': 0,
         }
         endpoint, created = cls.objects.get_or_create(id=cls.default_id, defaults=data)
         return endpoint

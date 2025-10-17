@@ -1,0 +1,12 @@
+id: gather_facts_kingbase
+name: "{{ 'Gather facts from Kingbase' | trans }}"
+category: database
+type:
+  - kingbase
+method: gather_facts
+i18n:
+  Gather facts from Kingbase:
+    zh: 使用 Ansible 模块 postgresql 从 Kingbase server 获取信息
+    en: Gather facts from Kingbase server using postgresql module
+    ja: postgresqlモジュールを使用して Kingbase serverから情報を収集する
+

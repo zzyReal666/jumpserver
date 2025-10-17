@@ -15,6 +15,7 @@ class DatabaseTypes(BaseType):
     MONGODB = 'mongodb', 'MongoDB'
     REDIS = 'redis', 'Redis'
     HIGHGO = 'highgo', 'HighGo'
+    KINGBASE = 'kingbase', 'Kingbase'
 
     @classmethod
     def _get_base_constrains(cls) -> dict:
@@ -115,14 +116,15 @@ class DatabaseTypes(BaseType):
                     }
                 }
             ],
-            cls.HIGHGO: [{'name': 'HighGo'}]
+            cls.HIGHGO: [{'name': 'HighGo'}],
+            cls.KINGBASE: [{'name': 'Kingbase'}]
         }
 
     @classmethod
     def get_community_types(cls):
         return [
             cls.MYSQL, cls.MARIADB, cls.POSTGRESQL,
-            cls.MONGODB, cls.REDIS,cls.SQLSERVER,cls.ORACLE,cls.DAMENG,cls.HIGHGO,
+            cls.MONGODB, cls.REDIS,cls.SQLSERVER,cls.ORACLE,cls.DAMENG,cls.HIGHGO,cls.KINGBASE,
         ]
 
 

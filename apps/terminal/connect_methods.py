@@ -57,6 +57,7 @@ class NativeClient(TextChoices):
             Protocol.postgresql: [cls.db_client, cls.db_guide],
             Protocol.sqlserver: [cls.db_client, cls.db_guide],
             Protocol.highgo: [cls.db_client],
+            Protocol.kingbase: [cls.db_client],
             Protocol.vnc: [cls.vnc_guide, ]
         }
         return clients
@@ -177,7 +178,8 @@ class ConnectMethodUtil:
                     Protocol.mysql, Protocol.postgresql,
                     Protocol.oracle, Protocol.sqlserver,
                     Protocol.mariadb, Protocol.db2,
-                    Protocol.dameng, Protocol.highgo
+                    Protocol.dameng, Protocol.highgo,
+                    Protocol.kingbase
                 ],
                 'match': 'm2m'
             },
@@ -194,7 +196,8 @@ class ConnectMethodUtil:
                     Protocol.mysql, Protocol.postgresql,
                     Protocol.oracle, Protocol.mariadb,
                     Protocol.redis, Protocol.sqlserver,
-                    Protocol.mongodb, Protocol.highgo
+                    Protocol.mongodb, Protocol.highgo,
+                    Protocol.kingbase
                 ],
                 'match': 'map'
             },

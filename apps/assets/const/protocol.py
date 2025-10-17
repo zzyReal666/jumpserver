@@ -28,6 +28,7 @@ class Protocol(ChoicesMixin, models.TextChoices):
     redis = 'redis', 'Redis'
     mongodb = 'mongodb', 'MongoDB'
     highgo = 'highgo', 'HighGo'
+    kingbase = 'kingbase', 'Kingbase'
 
     k8s = 'k8s', 'K8s'
     http = 'http', 'HTTP(s)'
@@ -264,6 +265,32 @@ class Protocol(ChoicesMixin, models.TextChoices):
                         'default': False,
                         'label': _('Use SSL'),
                         'help_text': _('Whether to use SSL connection')
+                    },
+                }
+            },
+            cls.kingbase: {
+                'port': 54321,
+                'required': True,
+                'secret_types': ['password'],
+                'xpack': True,
+                'setting': {
+                    'use_ssl': {
+                        'type': 'bool',
+                        'default': False,
+                        'label': _('Use SSL'),
+                        'help_text': _('Whether to use SSL connection')
+                    },
+                    'pg_ssl_mode': {
+                        'type': 'select',
+                        'default': 'prefer',
+                        'label': _('SSL mode'),
+                        'choices': [
+                            ('prefer', 'Prefer'),
+                            ('require', 'Require'),
+                            ('verify-ca', 'Verify CA'),
+                            ('verify-full', 'Verify Full'),
+                        ],
+                        'help_text': _('SSL connection mode')
                     },
                 }
             },

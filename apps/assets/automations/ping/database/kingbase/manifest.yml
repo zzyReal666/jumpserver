@@ -1,0 +1,12 @@
+id: kingbase_ping
+name: "{{ 'Ping Kingbase' | trans }}"
+category: database
+type:
+  - kingbase
+method: ping
+i18n:
+  Ping Kingbase:
+    zh: 使用 Ansible 模块 postgresql 来测试 Kingbase 可连接性
+    en: Use ansible postgresql module to test Kingbase
+    ja: Ansible postgresqlモジュールを使用してテストする Kingbase
+
