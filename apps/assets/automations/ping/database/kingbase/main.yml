@@ -9,7 +9,7 @@
     ansible_timeout: 30
   tasks:
     - name: Test Kingbase connection
-      community.postgresql.postgresql_ping:
+      community.postgresql.postgresql_query:
         login_user: "{{ jms_account.username }}"
         login_password: "{{ jms_account.secret }}"
         login_host: "{{ jms_asset.address }}"
@@ -19,6 +19,6 @@
         ssl_cert: "{{ ssl_cert if check_ssl and ssl_cert | length > 0 else omit }}"
         ssl_key: "{{ ssl_key if check_ssl and ssl_key | length > 0 else omit }}"
         ssl_mode: "{{ jms_asset.spec_info.pg_ssl_mode | default('prefer') }}"
+        query: SELECT 1
       register: result
-      failed_when: not result.is_available
-
+      failed_when: result is failed
